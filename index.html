@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>BudgetEnsemble</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>BudgetEnsemble</h1>
+    <h2>L'endroit idéal pour organiser vos dépenses en duo !</h2>
+    <p>Simplifiez la gestion de l'argent avec
+      votre partenaire en utilisant notre plateforme conviviale. <br><br>Chacun peut ajouter ses revenus, puis nous calculons
+      automatiquement la juste part des dépenses en fonction de votre contribution financière. Chaque achat est
+      enregistré avec le nom de celui qui l'a fait, offrant une vision claire des dépenses de chacun. Fini les prises de
+      tête sur l'argent ! <br><br>Avec "BudgetEnsemble", gardez une trace simple et transparente de vos finances à deux.</p>
+
+    <!-- Section pour les revenus -->
+    <div id="income-section">
+      <h2>Revenus</h2>
+      <div>
+        <label for="myName">Mon Prénom:</label>
+        <input type="text" id="myName">
+        <label for="myIncome">Mon Revenu Mensuel:</label>
+        <input type="number" id="myIncome">
+      </div>
+      <div>
+        <label for="partnerName">Prénom de la 2ème personne:</label>
+        <input type="text" id="partnerName">
+        <label for="partnerIncome">Revenu Mensuel de la 2ème personne:</label>
+        <input type="number" id="partnerIncome">
+      </div>
+      <button onclick="calculatePercentage()">Calculer le Pourcentage</button>
+    </div>
+
+    <!-- Section pour les dépenses -->
+    <div id="expenses-section" style="display: none;">
+      <h2>Dépenses</h2>
+
+      <div>
+        <label for="expenseLabel">Type de Dépense:</label>
+        <input type="text" id="expenseLabel">
+      </div>
+
+      <div>
+        <label for="expenseAmount">Coût de la Dépense:</label>
+        <input type="number" id="expenseAmount">
+      </div>
+
+      <div>
+        <label for="expenseAuthor">Auteurice:</label>
+        <select id="expenseAuthor">
+          <option value="" disabled selected>Sélectionner un prénom</option>
+          <!-- Les options seront ajoutées dynamiquement ici -->
+        </select>
+      </div>
+
+      <button onclick="addExpense()">Ajouter Dépense</button>
+
+      <ul id="expenseList"></ul>
+
+      <button style="display: none;" onclick="calculateTotal()">Calculer le Total</button>
+    </div>
+
+
+
+
+    <!-- Résultats -->
+    <div id="results">
+      <h2>Résultats</h2>
+      <p id="percentage"></p>
+      <p id="totalExpenses"></p>
+      <p id="balance"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
